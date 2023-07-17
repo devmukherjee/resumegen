@@ -1,0 +1,22 @@
+{% extends 'pdf/base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row m-5">
+        <div class="col-md-12">
+            <h2>CV Database Profile List</h2>
+
+        </div>
+    </div>
+    {% for profile in profiles %}
+    <div class="row border border-success">
+        <div class="col-md-6 py-2">
+            <h6> {{ profile.name }} </h6>
+        </div>
+        <div class="col-md-6 py-2">
+            <a href="{% url 'resume' profile.id %}" class="btn btn-warning"> Download CV </a>
+        </div>
+        <hr>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
